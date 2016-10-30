@@ -1,0 +1,33 @@
+<html ng-app="Training">
+	<head>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pavanam" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+		<script src="js/training.js"></script>
+	</head>
+
+	<body>
+		<div id="header" ng-controller="IndexCtrl">
+			<nav id="main-navbar">
+				<a href="#/" id="all">
+					All
+				</a>
+				<a href="#strategy" id="strategy">
+					Strategy
+				</a>
+				<a href="#content" id="content">
+					Content
+				</a>
+				<a href="#misc" id="misc">
+					Misc
+				</a>
+			</nav>
+		</div>
+
+		<div id="website-content">
+			<!-- Injected Content -->
+			<div ng-view></div>
+		</div>
+	</body>
+</html>
