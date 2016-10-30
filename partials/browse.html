@@ -1,4 +1,19 @@
 <div ng-controller="ContentCtrl">
+	<nav id="browse-navbar">
+		<a href="#/" id="all">
+			All
+		</a>
+		<a href="#strategy" id="strategy">
+			Strategy
+		</a>
+		<a href="#content" id="content">
+			Content
+		</a>
+		<a href="#misc" id="misc">
+			Misc
+		</a>
+	</nav>
+
 	<div ng-repeat="training in trainings" style="display:inline-block;">
 		<div ng-show="training.category == 'content'" class="content-box" id="{{ training.category }}">
 			<span class="box-title">{{ training.title }}</span>

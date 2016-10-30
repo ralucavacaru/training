@@ -1,29 +1,29 @@
-var Training = angular.module('Training', ['ngRoute']);
+var Training = angular.module('Training', ['ui.router']);
 
+Training.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
 
-Training.config(['$routeProvider', function ($routeProvider) {
-$routeProvider
-  .when("/", {
-    templateUrl: "partials/home.html",
-    controller: "HomeCtrl",
-  })
-  .when("/strategy", {
-    templateUrl: "partials/strategy.html", 
-    controller: "StrategyCtrl",
-  })
-  .when("/content", {
-    templateUrl: "partials/content.html", 
-    controller: "ContentCtrl",
-  })
-  .when("/misc", {
-    templateUrl: "partials/misc.html", 
-    controller: "MiscCtrl",
-  })
-  // else 404
-  // .otherwise("/404", {templateUrl: "partials/404.html", <span class="highlight">controller: "PageCtrl"</span>});
-}]);
+  var homeState = {
+    name: 'home',
+    url: '/',
+    templateUrl: 'partials/home.html'
+  }
 
-Training.controller('IndexCtrl', function($scope) {
+  var browseState = {
+    name: 'browse',
+    url: '/browse',
+    templateUrl: 'partials/browse.html'
+  }
+
+  var aboutState = {
+    name: 'about',
+    url: '/about',
+    templateUrl: 'partials/about.html'
+  }
+
+  $stateProvider.state(homeState);
+  $stateProvider.state(browseState);
+  $stateProvider.state(aboutState);
 });
 
 Training.controller('HomeCtrl', function($scope, MockDataFactory) {
