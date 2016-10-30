@@ -45,6 +45,14 @@ p {
 	border-bottom-width: 6px;
 }
 
+#home, #browse, #about {
+	border-color: #383D3B;
+}
+#home:hover, #browse:hover, #about:hover, #home.active, #browse.active, #about.active {
+	background-color: #383D3B;
+	color: white;
+}
+
 /* Content boxes
 */
 
@@ -107,11 +115,7 @@ p {
 #strategy {
 	border-color: #558B6E;
 }
-#strategy:hover {
-	background-color: #558B6E;
-	color: white;
-}
-#strategy:active {
+#strategy:hover, #strategy.active {
 	background-color: #558B6E;
 	color: white;
 }
@@ -119,7 +123,7 @@ p {
 #content {
 	border-color: #648EAA;
 }
-#content:hover {
+#content:hover, #content.active {
 	background-color: #648EAA;
 	color: white;
 }
@@ -127,7 +131,7 @@ p {
 #misc {
 	border-color: #A86464;
 }
-#misc:hover {
+#misc:hover, #misc.active {
 	background-color: #A86464;
 	color: white;
 }
@@ -135,7 +139,7 @@ p {
 #all {
 	border-color: #383D3B;
 }
-#all:hover {
+#all:hover, #all.active {
 	background-color: #383D3B;
 	color: white;
 }

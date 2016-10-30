@@ -53,7 +53,8 @@ Training.config(function($stateProvider, $urlRouterProvider) {
 Training.controller('HomeCtrl', function($scope, MockDataFactory) {
 });
 
-Training.controller('BrowseCtrl', function($scope, MockDataFactory) {
+Training.controller('BrowseCtrl', function($scope, $state, MockDataFactory) {
+  $scope.$state = $state;
 });
 
 Training.controller('AllCtrl', function($scope, MockDataFactory) {
