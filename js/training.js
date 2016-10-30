@@ -2,6 +2,7 @@ var Training = angular.module('Training', ['ui.router']);
 
 Training.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.when('browse','browse.all');
 
   var homeState = {
     name: 'home',
@@ -12,7 +13,7 @@ Training.config(function($stateProvider, $urlRouterProvider) {
     name: 'browse',
     url: '/browse',
     templateUrl: 'partials/browse.html',
-    redirectTo: 'browse.all'
+    redirectTo: 'browse.all',
   }
   var allState = {
     name: 'browse.all',
@@ -225,3 +226,13 @@ Training.factory('MockDataFactory', function () {
     ]
   }
 });
+
+// Provides logic for default nested scopes via redirectTo
+Training.run(['$rootScope', '$state', function($rootScope, $state) {
+    $rootScope.$on('$stateChangeStart', function(evt, to, params) {
+      if (to.redirectTo) {
+        evt.preventDefault();
+        $state.go(to.redirectTo, params)
+      }
+    });
+}]);
