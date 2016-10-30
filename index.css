@@ -100,14 +100,18 @@ p {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 20px;
 	font-weight: bold;
-	border-style: solid;
-	border-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-width: 6px;
 }
 
 #strategy {
 	border-color: #558B6E;
 }
 #strategy:hover {
+	background-color: #558B6E;
+	color: white;
+}
+#strategy:active {
 	background-color: #558B6E;
 	color: white;
 }

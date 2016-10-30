@@ -1,0 +1,9 @@
+<div ng-controller="ContentCtrl">
+	<div ng-repeat="training in trainings" style="display:inline-block;">
+		<div ng-show="training.category == 'content'" class="content-box" id="{{ training.category }}">
+			<span class="box-title">{{ training.title }}</span>
+			<span class="box-author">{{ training.author }}</span>
+			<span class="box-description">{{ training.description }}</span>
+		</div>
+	</div>
+</div>

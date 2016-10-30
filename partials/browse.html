@@ -1,24 +1,18 @@
-<div ng-controller="ContentCtrl">
+<div ng-controller="BrowseCtrl">
 	<nav id="browse-navbar">
-		<a href="#/" id="all">
+		<a ui-sref="browse.all" ui-sref-active="active" id="all">
 			All
 		</a>
-		<a href="#strategy" id="strategy">
+		<a ui-sref="browse.strategy" ui-sref-active="active" id="strategy">
 			Strategy
 		</a>
-		<a href="#content" id="content">
+		<a ui-sref="browse.content" ui-sref-active="active" id="content">
 			Content
 		</a>
-		<a href="#misc" id="misc">
+		<a ui-sref="browse.misc" ui-sref-active="active" id="misc">
 			Misc
 		</a>
 	</nav>
 
-	<div ng-repeat="training in trainings" style="display:inline-block;">
-		<div ng-show="training.category == 'content'" class="content-box" id="{{ training.category }}">
-			<span class="box-title">{{ training.title }}</span>
-			<span class="box-author">{{ training.author }}</span>
-			<span class="box-description">{{ training.description }}</span>
-		</div>
-	</div>
+	<ui-view></ui-view>
 </div>
