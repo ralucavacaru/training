@@ -51,7 +51,7 @@ Training.config(function($stateProvider, $urlRouterProvider) {
         .state(aboutState);
 });
 Training.controller('IndexCtrl', function($scope, MockDataFactory) {
-  $scope.scrollTo = function (target){
+  $scope.scrollTo = function (target) {
   };
 });
 
@@ -60,6 +60,8 @@ Training.controller('HomeCtrl', function($scope, MockDataFactory) {
 
 Training.controller('BrowseCtrl', function($scope, $state, MockDataFactory) {
   $scope.$state = $state;
+  $scope.scrollTo = function (target) {
+  };
 });
 
 Training.controller('AllCtrl', function($scope, MockDataFactory) {
@@ -231,7 +233,7 @@ Training.factory('MockDataFactory', function () {
   }
 });
 
-// Provides logic for default nested scopes via redirectTo
+// Provides logic for default nested scopes via redirectTo.
 Training.run(['$rootScope', '$state', function($rootScope, $state) {
     $rootScope.$on('$stateChangeStart', function(evt, to, params) {
       if (to.redirectTo) {
@@ -241,6 +243,7 @@ Training.run(['$rootScope', '$state', function($rootScope, $state) {
     });
 }]);
 
+// Directive for scroll-then-fixed main nav bar.
 Training.directive('setClassWhenAtTop', function ($window) {
     var $win = angular.element($window); // wrap window object as jQuery object
 
@@ -251,7 +254,28 @@ Training.directive('setClassWhenAtTop', function ($window) {
                 offsetTop = element.offset().top; // get element's top relative to the document
 
             $win.on('scroll', function (e) {
-                if ($win.scrollTop() >= offsetTop) {
+                if ($win.scrollTop() >= offsetTop + 90) {
+                    element.addClass(topClass);
+                } else {
+                    element.removeClass(topClass);
+                }
+            });
+        }
+    };
+})
+
+// Directive for scroll-then-fixed browse nav bar.
+Training.directive('setClassWhenAtTopBrowse', function ($window) {
+    var $win = angular.element($window); // wrap window object as jQuery object
+
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            var topClass = attrs.setClassWhenAtTopBrowse, // get CSS class from directive's attribute value
+                offsetTop = element.offset().top; // get element's top relative to the document
+
+            $win.on('scroll', function (e) {
+                if ($win.scrollTop() >= offsetTop - 40) {
                     element.addClass(topClass);
                 } else {
                     element.removeClass(topClass);
