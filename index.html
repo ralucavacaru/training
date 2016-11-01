@@ -1,15 +1,16 @@
 <html ng-app="Training">
 	<head>
 		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pavanam" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
 		<script src="js/training.js"></script>
 	</head>
 
-	<body>
+	<body ng-controller="IndexCtrl">
 		<div id="header">
-			<nav id="main-navbar">
+			<nav id="main-navbar" set-class-when-at-top="fix-to-top">
 				<a ui-sref="home" ui-sref-active="active" id="home">
 					Home
 				</a>
