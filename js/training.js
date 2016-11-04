@@ -40,6 +40,15 @@ Training.config(function($stateProvider, $urlRouterProvider) {
     url: '/about',
     templateUrl: 'partials/about.html'
   }
+  var articleState = {
+    name: 'article',
+    url: '/lorem-ipsum',
+    views : {
+        '@': {
+            templateUrl: 'partials/lorem-ipsum.html'
+        }
+    }
+  }
 
   $stateProvider
         .state(homeState)
@@ -48,7 +57,8 @@ Training.config(function($stateProvider, $urlRouterProvider) {
         .state(strategyState)
         .state(contentState)
         .state(miscState)
-        .state(aboutState);
+        .state(aboutState)
+        .state(articleState);
 });
 Training.controller('IndexCtrl', function($scope, MockDataFactory) {
   $scope.scrollTo = function (target) {
@@ -80,6 +90,9 @@ Training.controller('MiscCtrl', function($scope, MockDataFactory) {
     $scope.trainings = MockDataFactory.trainings;
 });
 
+Training.controller('ArticleCtrl', function($scope, $state, MockDataFactory) {
+  $scope.$state = $state;
+});
 
 // Factory to be injected in controllers for using mock data.
 Training.factory('MockDataFactory', function () {
