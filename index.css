@@ -30,8 +30,7 @@ a {
 	z-index: 900;
 }
 
-/* Main navigation bar
-*/
+/********* Main navigation bar *********/
 
 #main-navbar {
 	position: absolute;
@@ -40,7 +39,7 @@ a {
 }
 #main-navbar a {
 	display: inline-block;
-	width: 120px;
+	width: 110px;
 	text-align: center;
 	text-decoration: none;
 	color: #383D3B;
@@ -48,8 +47,10 @@ a {
 	font-size: 20px;
 	font-weight: bold;
 	border-bottom-style: solid;
-	border-bottom-width: 6px;
-	padding-top: 6px;
+	border-bottom-width: 5px;
+	padding-top: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
 }
 .fix-to-top {
     position: fixed !important;
@@ -64,8 +65,7 @@ a {
 	color: white;
 }
 
-/* Content boxes
-*/
+/********* Content boxes *********/
 #box-wrapper {
 	width: calc(100% - 200px);
 	display: inline-block;
@@ -81,7 +81,8 @@ a {
 	background-color: #f5f5f5;
 	margin: 10px;
 	border-style: solid;
-	border-width: 6px;
+	border-width: 5px;
+	border-radius: 5px;
 	text-align: left;
 }
 .box-title {
@@ -108,8 +109,7 @@ a {
 	margin: 0;
 }
 
-/* Browse navigation bar
-*/
+/********* Browse navigation bar *********/
 
 #browse-navbar {
 	float: left;
@@ -128,9 +128,10 @@ a {
 	font-size: 20px;
 	font-weight: bold;
 	border-bottom-style: solid;
-	border-bottom-width: 6px;
+	border-bottom-width: 5px;
+	border-radius: 5px;
 	margin: 5px;
-	padding-top: 6px;
+	padding-top: 5px;
 }
 
 .fix-to-top-browse {
@@ -168,4 +169,72 @@ a {
 #all:hover, #all.active {
 	background-color: #383D3B;
 	color: white;
+}
+
+/********* Article View *********/
+
+.article-sidebar {
+	padding: 5px;
+	width: 200px;
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
+.article-sidebar h1 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 26px;
+	margin: 0;
+}
+
+.related {
+	list-style: none;
+	padding: 0;
+}
+.related h2 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 18px;
+	margin: 0;
+}
+.related .subtitle {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-style: italic;
+	font-size: 16px;
+}
+.related li {
+	border-bottom-style: solid;
+	border-bottom-width: 5px !important;
+	margin: 10px 0px;
+	padding: 10px 5px 5px 5px;
+	border-radius: 5px;
+}
+
+.article-content {
+	font-family: 'Pavanam', sans-serif;
+	font-size: 17px;
+	line-height: 24px;
+	display: inline-block;
+	width: calc(100% - 400px);
+	float: right;
+	padding: 0px 90px;
+}
+
+.article-content h1 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 30px;
+	margin-top: 0;
+}
+.article-content h2 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 26px;
+	margin-top: 0;
+}
+.article-content h3 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 22px;
+	margin-top: 0;
+}
+.article-content h4 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 20px;
+	margin-top: 0;
 }
